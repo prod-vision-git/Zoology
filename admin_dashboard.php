@@ -8,6 +8,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
 }
 
 include 'header.php'; // ✅ your shared header file
+include 'database/database.php'
 ?>
 
 <!DOCTYPE html>
@@ -35,10 +36,17 @@ include 'header.php'; // ✅ your shared header file
                     <h3>Total Faculty</h3>
                     <p>18</p>
                 </div>
-                <div class="card">
-                    <h3>Total Students</h3>
-                    <p>245</p>
-                </div>
+               <div class="card">
+    <h3>Total Students</h3>
+    <p>
+        <?php
+        // Fetch total students from DB
+        $result = $conn->query("SELECT COUNT(*) AS total FROM students");
+        $row = $result->fetch_assoc();
+        echo $row['total'];
+        ?>
+    </p>
+</div>
                 <div class="card">
                     <h3>New Registrations</h3>
                     <p>12</p>
@@ -47,7 +55,7 @@ include 'header.php'; // ✅ your shared header file
 
             <div class="content-box">
                 <h2>Admin Actions</h2>
-                <p>Select an option from the left menu to manage records.</p>
+                <p>Select an option from the right menu to manage records.</p>
             </div>
         </section>
     </main>
@@ -58,11 +66,12 @@ include 'header.php'; // ✅ your shared header file
         </div>
 
         <ul class="menu">
+            <li><a href="admin_dashboard.php">📊 Dashboard</a></li>
             <li><a href="create_user.php">👤 Create User</a></li>
             <li><a href="update_faculty.php">🏫 Update Faculty</a></li>
+            <li><a href="add_student.php">🎓 create new Student</a></li>
             <li><a href="update_student.php">🎓 Update Student</a></li>
-            <li><a href="reports.php">📊 Reports</a></li>
-            <li><a href="settings.php">⚙️ Settings</a></li>
+            <li><a href="settings.php">⚙️ Settings</a>
         </ul>
 
         <div class="logout">
