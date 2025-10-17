@@ -22,25 +22,7 @@ include 'header.php'; // ✅ your shared header file
 
 <body>
 <div class="dashboard-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h2>Admin Panel</h2>
-        </div>
-
-        <ul class="menu">
-            <li><a href="create_user.php">👤 Create User</a></li>
-            <li><a href="update_faculty.php">🏫 Update Faculty</a></li>
-            <li><a href="update_student.php">🎓 Update Student</a></li>
-            <li><a href="reports.php">📊 Reports</a></li>
-            <li><a href="settings.php">⚙️ Settings</a></li>
-        </ul>
-
-        <div class="logout">
-            <a href="logout.php">🚪 Logout</a>
-        </div>
-    </aside>
-
+    
     <!-- Main Content -->
     <main class="main-content">
         <header class="topbar">
@@ -69,6 +51,24 @@ include 'header.php'; // ✅ your shared header file
             </div>
         </section>
     </main>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Admin Panel</h2>
+        </div>
+
+        <ul class="menu">
+            <li><a href="create_user.php">👤 Create User</a></li>
+            <li><a href="update_faculty.php">🏫 Update Faculty</a></li>
+            <li><a href="update_student.php">🎓 Update Student</a></li>
+            <li><a href="reports.php">📊 Reports</a></li>
+            <li><a href="settings.php">⚙️ Settings</a></li>
+        </ul>
+
+        <div class="logout">
+            <a href="logout.php">🚪 Logout</a>
+        </div>
+    </aside>
 </div>
 
 <?php include 'footer.php'; ?> <!-- ✅ your shared footer -->
